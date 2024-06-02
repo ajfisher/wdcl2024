@@ -17,7 +17,7 @@ This is my speaker notes which hopefully I can see.
 
 ## This is a slide number 3
 
-* Bullet list of items
+* Bullet list of items that are things
 * list item number two
 * list item number 3
 
