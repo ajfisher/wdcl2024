@@ -1,0 +1,33 @@
+{
+  "name": "wdcl2024",
+  "version": "1.0.0",
+  "description": "Slides and materials for WDC Leaders 2024 talk",
+  "main": "index.html",
+  "scripts": {
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "scss": "sass css/theme/ajfisher.scss css/theme/ajfisher.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ajfisher",
+  "license": "ISC",
+  "dependencies": {
+    "reveal.js": "^5.1.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "http-server": "^14.1.1",
+    "markdown-loader": "^8.0.0",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.77.4",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.91.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
