@@ -7,12 +7,16 @@ import '../css/theme/ajfisher.css';
 
 // Initialize Reveal.js
 let deck = new Reveal({
-  controls: true,
+  width: 1280,
+  height: 720,
+
+  controls: false,
   controlsTutorial: false,
   progress: true,
   touch: true,
   transition: 'fade',
   backgroundTransition: 'fade',
+
   plugins: [
     Markdown,
     Notes
