@@ -35,6 +35,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: './slides.md', to: './' },
+        { from: './images/*', to: './'},
         // Add other static assets here if needed
       ],
     }),
