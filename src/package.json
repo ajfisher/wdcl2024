@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "scss": "sass css/theme/ajfisher.scss css/theme/ajfisher.css",
+    "scss": "sass css/theme/source/ajfisher.scss css/theme/ajfisher.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ajfisher",
