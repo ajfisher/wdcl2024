@@ -45,6 +45,9 @@ deck.initialize().then(() => {
   if( window.location.href.match( /wdcl2024/gi ) ) {
     document.getElementsByTagName("body")[0].classList.add('production');
   }
+  if (window.location.href.match(/embed/gi )) {
+    document.getElementsByTagName("body")[0].classList.add('embed');
+  }
 }).catch(error => {
   console.log('error init', error);
 });

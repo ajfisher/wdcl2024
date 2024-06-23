@@ -27,4 +27,8 @@ from expertise leader to general management.
 
 You can see thew whole talk here at https://wdcl2024.ajf.io
 
+## Using
 
+* You can embed this talk using the url https://wdcl2024.ajf.io/?embed which will
+fix up some of the styles for embedded scenarios
+* You can print a copy of the talk at https://wdcl2024.ajf.io/?print-pdf
