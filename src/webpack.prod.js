@@ -36,6 +36,7 @@ module.exports = {
       patterns: [
         { from: './slides.md', to: './' },
         { from: './images/*', to: './'},
+        { from: './static/*', to: './'},
         // Add other static assets here if needed
       ],
     }),
