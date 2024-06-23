@@ -4,6 +4,8 @@
 Code Leaders, 2024<br/>
 Andrew Fisher
 
+[Download slides (PDF 60MB)](/static/follow_me_talk.pdf)<!-- .element: class="download" -->
+
 Notes:
 
 Good morning.
