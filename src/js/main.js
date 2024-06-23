@@ -8,7 +8,10 @@ import '../css/fontawesome/css/fontawesome.min.css';
 import '../css/fontawesome/css/brands.min.css';
 
 let showNotes = false;
-if( window.location.search.match( /print-pdf/gi ) ) {
+if( window.location.href.match( /print-pdf/gi ) ) {
+  showNotes = true;
+} else if( window.location.href.match( /wdcl2024/gi ) ) {
+  // turn the notes on if we're in prod as well
   showNotes = true;
 }
 
@@ -39,6 +42,9 @@ let deck = new Reveal({
 deck.initialize().then(() => {
   console.log('Reveal.js is inited');
   console.log(`Notes on: ${showNotes}`);
+  if( window.location.href.match( /wdcl2024/gi ) ) {
+    document.getElementsByTagName("body")[0].classList.add('production');
+  }
 }).catch(error => {
   console.log('error init', error);
 });
