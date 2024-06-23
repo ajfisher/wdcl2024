@@ -1,0 +1,395 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&family=Rokkitt:wght@400&family=Montserrat:wght@300&display=swap");
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #3f3f3f;
+
+$mainColor: #ffffff;
+$headingColor: #fc307b;
+
+$mainFontSize: 4rem;
+$mainFont: 'Rokkitt', serif;
+$headingFont: 'Raleway', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: normal;
+$headingFontWeight: 600;
+$linkColor: #ff825e;
+$linkColorHover: #ffbfd7;
+$selectionBackgroundColor: rgba( $linkColor, 0.75 );
+
+$heading1Size: 2.2em;
+$heading2Size: 1.2em;
+$heading3Size: 1.2em;
+$heading4Size: 1.1em;
+
+$printHeaderSize: 1.2em;
+
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#222);
+
+// Background generator
+@mixin bodyBackground() {
+	//@include radial-gradient( rgba(28,30,32,1), rgba(85,90,95,1) );
+	@include radial-gradient( darken($backgroundColor, 10%), $backgroundColor );
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// Style Customisation factors
+
+
+// Expose some additional CSS variables
+
+:root {
+    --dark-grey: #3f3f3f;
+    --darkened-grey: #0c0c0c; /* 20% darker */
+    --lightened-grey: #7f7f7f; /* 20% lighter */
+
+    /** main colour swatches from paletton **/
+    --color-primary-0: #FF5E9A;  /* Main Primary color */
+    --color-primary-1: #FFFFFF;
+    --color-primary-2: #FFBFD7;
+    --color-primary-3: #FC307B;
+    --color-primary-4: #E31A64;
+
+    --color-secondary-1-0: #FF825E;  /* Main Secondary color (1) */
+    --color-secondary-1-1: #FFFFFF;
+    --color-secondary-1-2: #FFCEBF;
+    --color-secondary-1-3: #FF5F31;
+    --color-secondary-1-4: #FF501D;
+
+    --color-secondary-2-0: #5EFFA9;  /* Main Secondary color (2) */
+    --color-secondary-2-1: #FFFFFF;
+    --color-secondary-2-2: #BFFFDD;
+    --color-secondary-2-3: #2FF78C;
+    --color-secondary-2-4: #16BF65;
+
+    --color-complement-0: #B2FF5E;   /* Main Complement color */
+    --color-complement-1: #FFFFFF;
+    --color-complement-2: #E0FFBF;
+    --color-complement-3: #9BFC30;
+    --color-complement-4: #87EA1B;
+
+    --base: var(--color-primary-0);
+    --light-base: var(--color-primary-2);
+    --dark-base: var(--color-primary-3);
+    --light-bg-tint: color-mix(in srgb, var(--base), #fff 90%);
+
+    --highlight: var(--color-secondary-1-0);
+    --accent: var(--color-secondary-1-2);
+
+    --linkcolor: var(--color-complement-0);
+
+    --dark-text-colour: var(--dark-grey);
+    --light-text-colour: rgba(255, 255, 255, 1.0);
+
+    --gutter-micro: 1rem;
+    --gutter-small: 2rem;
+    --gutter-medium: 4rem;
+    --gutter-large: 8rem;
+
+    --gutter: var(--gutter-medium);
+    --print-gutter: var(--gutter-small);
+}
+
+
+// Theme Overrides
+
+html {
+  font-size: 62.5%;
+}
+
+.reveal .slides {
+    text-align: left;
+    // margin: var(--gutter);
+    // box-sizing: border-box;
+    // border: 1px solid white;
+}
+
+// headings
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    background-color: var(--light-base);
+    max-width: 73rem;
+    color: var(--dark-base);
+}
+
+.reveal h1 {
+    font-size: $heading1Size;
+    padding: var(--gutter);
+    display:inline-block;
+    width: 73rem;
+    line-height: 1em;
+    text-shadow: $heading1TextShadow;
+}
+.reveal h2 {
+  font-size: $heading2Size;
+  padding: var(--gutter-small) var(--gutter);
+  display: inline-block;
+  margin-bottom: var(--gutter-large);
+}
+.reveal h3 {
+  font-size: $heading3Size;
+  padding: var(--gutter-small) var(--gutter);
+  display: inline-block;
+  margin-bottom: var(--gutter-large);
+}
+
+.reveal section.lgimage h2,
+.reveal section.lgimage h3,
+.reveal section.lgimage h1 {
+  margin-bottom: 0;
+}
+.reveal section.doubleimage h2 {
+  margin-bottom: var(--gutter);
+}
+
+.reveal h4 {font-size: $heading4Size; }
+
+.reveal section {
+  //padding-top: var(--gutter);
+  padding: var(--gutter);
+}
+
+.reveal section img {
+	// border: 1px solid $mainColor;
+    border: none;
+}
+
+.reveal p:has(img) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.reveal section.doubleimage img {
+  border: 1px solid var(--lightened-grey);
+  width: 48rem;
+}
+
+.reveal section.doubleimage img + img {
+  margin-left: var(--gutter);
+}
+
+// others
+.reveal p {
+	margin: var(--gutter);
+//	line-height: 0.8em;
+}
+
+.reveal .title p
+{
+  line-height: 0.9em;
+}
+
+p.bigtext {
+    font-size: 2.2em;
+}
+
+.reveal a.download {
+    display: none;
+}
+
+.reveal .progress {
+    color: var(--highlight);
+}
+
+.reveal p.attribution{
+    background-color: rgba(63,63,63,0.8);
+    font-size: 0.5em;
+    display: inline-block;
+    padding: 0.5em;
+    position: absolute;
+    transform-style: preserve-3d;
+    right: 12rem;
+    margin: 0;
+}
+
+.reveal p.help {
+    color: lighten($backgroundColor, 30%);
+    font-size: 0.6em;
+    margin-left: 0.65em;
+}
+
+
+.reveal ol,
+.reveal ul {
+    list-style-type: none;
+    display: block;
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+
+.reveal ol {
+    counter-reset: numbers;
+}
+
+.reveal ol li:before {
+    position: absolute;
+    margin-left: calc(-1 * var(--gutter));
+    content: counter(numbers);
+    counter-increment: numbers;
+    color: var(--dark-base);
+}
+
+.reveal ul li:before {
+    position: absolute;
+    margin-left: -1em;
+    content: ">";
+    color: var(--dark-base);
+}
+
+.reveal li {
+    margin-bottom: 0.2em;
+}
+
+.reveal blockquote {
+	width: 55%;
+	margin-top: 3em;
+    margin-left: auto;
+	padding: 1.5em;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+// PRINT styles
+
+html.print-pdf .reveal div.speaker-notes-pdf,
+body.production .reveal div.speaker-notes {
+    display: block !important;
+    position: absolute;
+    left: auto !important;
+    top: var(--print-gutter);
+    right: var(--print-gutter);
+    bottom: auto !important;
+    padding: 0;
+    height: auto;
+    max-height: 95%;
+    max-width: 20%;
+    width: 20% !important;
+    background-color: rgba(72,72,72,0.5);
+}
+
+html.print-pdf .reveal div.speaker-notes:before,
+body.production .reveal div.speaker-notes:before {
+  display: none;
+}
+
+html.print-pdf .reveal div.speaker-notes p,
+body.production .reveal div.speaker-notes p {
+  margin: var(--print-gutter);
+  font-size: 0.65em;
+  color: var(--light-text-colour);
+}
+
+html.print-pdf .reveal div.speaker-notes ol,
+body.production .reveal div.speaker-notes ol {
+  margin: var(--print-gutter);
+}
+
+body[data-speaker-layout="notes-only"] #speaker-controls {
+  padding-top: none;
+}
+
+html.print-pdf h3,
+body.production h3{
+    font-size: $printHeaderSize;
+}
+
+html.print-pdf h2,
+body.production h2 {
+    font-size: $printHeaderSize;
+}
+
+// Weirdness to make it work in safari etc
+// make this work by default.
+.reveal .slides>section {
+	left: 0%;
+	top: 0%;
+}
+
+//now fix it for chrome
+/** body.chrome .reveal .slides>section{
+    left: -50%;
+    top: -50%;
+} **/
+// PRODUCTION styles
+body.production .reveal.show-notes {
+  max-width: none;
+  max-height: none;
+}
+
+body.production .reveal a.download {
+  font-size: 0.5em;
+  display: unset;
+}
+
+body.production .reveal div.speaker-notes {
+  top: var(--gutter);
+  right: var(--gutter);
+}
+
+/** For when the notes are embedded **/
+body.production.embed .reveal div.speaker-notes {
+  top: var(--gutter-small);
+  right: var(--gutter-small);
+  max-width: 30%;
+  width: 30% !important;
+}
+
+body.production.embed .reveal div.speaker-notes p {
+  margin: var(--gutter-micro);
+  font-size: 0.55em;
+}
+
+/** Very specific slides styles **/
+
+.reveal section img.capmodel {
+  width: 75%;
+}
+
+.reveal section img.relationshipmap {
+  width: 70%;
+}
+
+.reveal section img.teamcanvas {
+  width: 90%;
+}
+
+.reveal img.qrcode {
+  float: right;
+  width: 25rem;
+  margin-right: var(--gutter);
+  margin-top: var(--gutter);
+}
+
+.reveal p.acknowledge {
+  font-size: 2.2rem;
+  margin: var(--gutter-small) var(--gutter);
+  width: 65%;
+}
+
+.reveal i.fa {
+  font-size: 3.5rem;
+}
